@@ -1,14 +1,15 @@
-import { Toaster } from "react-hot-toast";
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
+import { Toaster } from "react-hot-toast";
 import { AuthProvider } from "./auth/AuthContext"
+import { ThemeProvider } from "./theme/ThemeContext"
 import ProtectedRoute from "./auth/ProtectedRoute"
 import Auth from "./auth/Auth"
 import Navlink from "./navs/Navlink"
 import Dashboard from "./pages/Dashboard"
 import Orders from "./pages/Orders"
-import Customers from "./pages/Customers"
+import Sales from "./pages/Sales"
+import Warehouse from "./pages/Warehouse"
 import Products from "./pages/Products"
-import Analytics from "./pages/Analytics"
 
 const router = createBrowserRouter([
   {
@@ -25,19 +26,21 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <Dashboard /> },
       { path: "/orders", element: <Orders /> },
-      { path: "/customers", element: <Customers /> },
+      { path: "/sales", element: <Sales /> },
+      { path: "/warehouse", element: <Warehouse /> },
       { path: "/products", element: <Products /> },
-      { path: "/analytics", element: <Analytics /> },
     ]
   }
 ])
 
 function App() {
   return (
-    <AuthProvider>
-      <Toaster position="top-right" />
-      <RouterProvider router={router} />
-    </AuthProvider>
+    <ThemeProvider>
+      <AuthProvider>
+        <Toaster position="top-center" />
+        <RouterProvider router={router} />
+      </AuthProvider>
+    </ThemeProvider>
   )
 }
 

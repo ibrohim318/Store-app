@@ -9,7 +9,6 @@ import Dashboard from "./pages/Dashboard"
 import Orders from "./pages/Orders"
 import Sales from "./pages/Sales"
 import Warehouse from "./pages/Warehouse"
-import Products from "./pages/Products"
 
 const router = createBrowserRouter([
   {
@@ -28,7 +27,6 @@ const router = createBrowserRouter([
       { path: "/orders", element: <Orders /> },
       { path: "/sales", element: <Sales /> },
       { path: "/warehouse", element: <Warehouse /> },
-      { path: "/products", element: <Products /> },
     ]
   }
 ])

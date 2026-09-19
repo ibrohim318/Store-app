@@ -11,11 +11,11 @@ function Signup() {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [showPassword, setShowPassword] = useState(false);
+    const [error, setError] = useState("")
 
     const isFormValid = !email.trim() && !password.trim() && !name.trim()
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setError("");
 
         if (isFormValid) {
             toast("Barcha maydonlar to'ldirilmagan!.", {

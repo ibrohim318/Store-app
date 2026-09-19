@@ -16,9 +16,8 @@ function Menus() {
     switch (page) {
         case "/": pageName = "Dashboard"; break;
         case "/orders": pageName = "Orders"; break;
-        case "/customers": pageName = "Customers"; break;
+        case "/sales": pageName = "Sales"; break;
         case "/warehouse": pageName = "Warehouse"; break;
-        case "/products": pageName = "Products"; break;
         default: pageName = "Unknown"; break;
     }
 
@@ -30,7 +29,7 @@ function Menus() {
     const year = today.getFullYear();
 
     return (
-        <div className="p-2.5 bg-white dark:bg-slate-900 border-b-1 border-gray-200 dark:border-gray-800 flex items-center justify-between">
+        <div className="py-2.5 px-4 bg-white dark:bg-slate-900 border-b-1 border-gray-200 dark:border-gray-500 flex items-center justify-between">
             <div className="flex items-center gap-2">
                 <h1 className="text-lg font-semibold text-slate-800 dark:text-slate-100">{pageName}</h1>
                 <div className="px-2.5 py-1 text-gray-400 dark:text-gray-500 text-xs rounded-md bg-[#f1f5f9] dark:bg-slate-800 dark:text-gray-400 whitespace-nowrap">
